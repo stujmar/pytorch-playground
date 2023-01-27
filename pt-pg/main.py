@@ -1,6 +1,8 @@
+import torch
+
 def main():
     '''This is the main function.'''
-    print("hello world")
+    print(dir(torch))
 
 if __name__ == '__main__':
     main()
