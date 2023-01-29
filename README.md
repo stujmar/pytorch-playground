@@ -14,3 +14,9 @@ python -m pip install -r dev-requirements.txt
 ```bash
 python pt-pg/main.py
 ```
+
+## References
+
+https://www.youtube.com/watch?v=V_xro1bcAuA
+
+https://www.learnpytorch.io/00_pytorch_fundamentals/
