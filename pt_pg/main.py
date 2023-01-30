@@ -7,7 +7,9 @@ import matplotlib.pyplot as plt
 
 def main():
     '''This is the main function.'''
-    check_versions()
+    create_scalar()
+    create_vector()
+    # check_versions()
 
     # Examime the torch module
     # print(dir(torch))
@@ -27,6 +29,24 @@ def check_versions():
     print("pandas version:", pd.__version__)
     print("numpy version:", np.__version__)
     print("matplotlib version:", matplotlib.__version__)
+
+def create_scalar():
+    """This function creates a scalar."""
+    scalar = torch.tensor(7)
+    print(scalar)
+    # print(dir(scalar)) # long winded.
+    print(scalar.item()) # This is the preferred way to get the value of a scalar.
+
+def create_vector():
+    '''This function creates a vector.'''
+    print("... Creating a vector ...")
+    vector = torch.tensor([1, 2, 3])
+    print(vector, vector.dtype)
+    print(vector.shape, vector.size(), vector.ndim)
+    try:
+        print(vector.item())
+    except Exception as e:
+        print(e, "This only works for scalars.")
 
 def add(a, b):
     '''This function adds two numbers.'''
