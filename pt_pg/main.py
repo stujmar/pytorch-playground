@@ -9,6 +9,7 @@ def main():
     '''This is the main function.'''
     create_scalar()
     create_vector()
+    create_matrix()
     # check_versions()
 
     # Examime the torch module
@@ -45,6 +46,17 @@ def create_vector():
     print(vector.shape, vector.size(), vector.ndim)
     try:
         print(vector.item())
+    except Exception as e:
+        print(e, "This only works for scalars.")
+
+def create_matrix():
+    '''This function creates a matrix.'''
+    print("... Creating a matrix ...")
+    matrix = torch.tensor([[1, 2, 3], [4, 5, 6]])
+    print(matrix, matrix.dtype)
+    print(matrix.shape, matrix.size(), matrix.ndim)
+    try:
+        print(matrix.item())
     except Exception as e:
         print(e, "This only works for scalars.")
 
