@@ -10,6 +10,7 @@ def main():
     create_scalar()
     create_vector()
     create_matrix()
+    create_tensor()
     # check_versions()
 
     # Examime the torch module
@@ -59,6 +60,15 @@ def create_matrix():
         print(matrix.item())
     except Exception as e:
         print(e, "This only works for scalars.")
+
+def create_tensor():
+    '''This function creates a tensor.'''
+    print("... Creating a tensor ...")
+    # A tensor is a generalization of a vector and a matrix.
+    # A tensor is a multidimensional array.
+    # This is a three dimensional tensor.
+    TENSOR = torch.tensor([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+    print("TENSOR number of dimensions:", TENSOR.ndim)
 
 def add(a, b):
     '''This function adds two numbers.'''
