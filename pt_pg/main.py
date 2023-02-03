@@ -7,12 +7,14 @@ import matplotlib.pyplot as plt
 
 def main():
     '''This is the main function.'''
-    create_scalar()
-    create_vector()
-    create_matrix()
-    create_tensor()
-    # check_versions()
+    # create_scalar()
+    # create_vector()
+    # create_matrix()
+    # create_tensor()
+    # random_tensor()
+    compare_floats()
 
+    # check_versions()
     # Examime the torch module
     # print(dir(torch))
 
@@ -68,11 +70,37 @@ def create_tensor():
     # A tensor is a multidimensional array.
     # This is a three dimensional tensor.
     TENSOR = torch.tensor([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+    NINE_TENSOR = torch.tensor([[[1, 2, 3], [4, 5, 6], [7, 8, 9]]])
     print("TENSOR number of dimensions:", TENSOR.ndim)
+    print("TENSOR shape:", TENSOR.shape, NINE_TENSOR.shape)
+    print("zeroth:", NINE_TENSOR[0])
+    print("first:", NINE_TENSOR[0][1]) # > [4, 5, 6]
+    print("second:", NINE_TENSOR[0][2][1]) # > 8
+
+def random_tensor():
+    '''This function creates a random tensor.'''
+    print("... Creating a random tensor ...")
+    # The default is a float32 tensor.
+    random_tensor = torch.rand(2, 3)
+    print(random_tensor)
+    print("dtype:", random_tensor.dtype)
+    print(random_tensor.shape, random_tensor.size(), random_tensor.ndim)
+
+def compare_floats():
+    a = np.array([0.123456789121212,2,3], dtype=np.float16)
+    print("16bit: ", a[0])
+
+    b = np.array([0.123456789121212,2,3], dtype=np.float32)
+    print("32bit: ", b[0])
+
+    c = np.array([0.123456789121212121212,2,3], dtype=np.float64)
+    print("64bit: ", c[0])
 
 def add(a, b):
     '''This function adds two numbers.'''
     return a + b
+
+
 
 if __name__ == '__main__':
     main()
