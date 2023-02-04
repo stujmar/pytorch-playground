@@ -7,13 +7,7 @@ import matplotlib.pyplot as plt
 
 def main():
     '''This is the main function.'''
-    # create_scalar()
-    # create_vector()
-    # create_matrix()
-    # create_tensor()
-    # random_tensor()
     compare_floats()
-
     # check_versions()
     # Examime the torch module
     # print(dir(torch))
@@ -34,58 +28,6 @@ def check_versions():
     print("numpy version:", np.__version__)
     print("matplotlib version:", matplotlib.__version__)
 
-def create_scalar():
-    """This function creates a scalar."""
-    scalar = torch.tensor(7)
-    print(scalar)
-    # print(dir(scalar)) # long winded.
-    print(scalar.item()) # This is the preferred way to get the value of a scalar.
-
-def create_vector():
-    '''This function creates a vector.'''
-    print("... Creating a vector ...")
-    vector = torch.tensor([1, 2, 3])
-    print(vector, vector.dtype)
-    print(vector.shape, vector.size(), vector.ndim)
-    try:
-        print(vector.item())
-    except Exception as e:
-        print(e, "This only works for scalars.")
-
-def create_matrix():
-    '''This function creates a matrix.'''
-    print("... Creating a matrix ...")
-    matrix = torch.tensor([[1, 2, 3], [4, 5, 6]])
-    print(matrix, matrix.dtype)
-    print(matrix.shape, matrix.size(), matrix.ndim)
-    try:
-        print(matrix.item())
-    except Exception as e:
-        print(e, "This only works for scalars.")
-
-def create_tensor():
-    '''This function creates a tensor.'''
-    print("... Creating a tensor ...")
-    # A tensor is a generalization of a vector and a matrix.
-    # A tensor is a multidimensional array.
-    # This is a three dimensional tensor.
-    TENSOR = torch.tensor([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
-    NINE_TENSOR = torch.tensor([[[1, 2, 3], [4, 5, 6], [7, 8, 9]]])
-    print("TENSOR number of dimensions:", TENSOR.ndim)
-    print("TENSOR shape:", TENSOR.shape, NINE_TENSOR.shape)
-    print("zeroth:", NINE_TENSOR[0])
-    print("first:", NINE_TENSOR[0][1]) # > [4, 5, 6]
-    print("second:", NINE_TENSOR[0][2][1]) # > 8
-
-def random_tensor():
-    '''This function creates a random tensor.'''
-    print("... Creating a random tensor ...")
-    # The default is a float32 tensor.
-    random_tensor = torch.rand(2, 3)
-    print(random_tensor)
-    print("dtype:", random_tensor.dtype)
-    print(random_tensor.shape, random_tensor.size(), random_tensor.ndim)
-
 def compare_floats():
     a = np.array([0.123456789121212,2,3], dtype=np.float16)
     print("16bit: ", a[0])
@@ -99,8 +41,6 @@ def compare_floats():
 def add(a, b):
     '''This function adds two numbers.'''
     return a + b
-
-
 
 if __name__ == '__main__':
     main()
