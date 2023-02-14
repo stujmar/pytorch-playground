@@ -12,10 +12,10 @@ def main():
     # create_matrix()
     # create_tensor()
     # random_tensor()
-    random_controled_tensor((2, 3))
-    random_controled_tensor((2, 3))
-    random_controled_tensor((2, 3))
-
+    # random_controled_tensor((2, 3))
+    # random_controled_tensor((2, 3))
+    # random_controled_tensor((2, 3))
+    create_image_tensor(256)
     # check_versions()
     # Examime the torch module
     # print(dir(torch))
@@ -88,9 +88,10 @@ def random_controled_tensor(size):
     print("dtype:", random_tensor.dtype)
     print(random_tensor.shape, random_tensor.size(), random_tensor.ndim)
 
-def random_image_size_tensor(size):
+def create_image_tensor(size):
+    '''This function creates an image tensor.'''
     image_tensor = torch.rand(size=(size, size, 3))
-    print(image_tensor)
+    print(image_tensor.shape, image_tensor.ndim)
 
 if __name__ == '__main__':
     main()
